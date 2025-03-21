@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
+import AuthButton from "../hooks.jsx/AuthButton";
+import { useNavigate } from "react-router-dom";
 
 const LoginInput = () => {
-    
+    const navigate = useNavigate();
+
     const handleLogin = () => {
         alert("Login Clicked");
         // Perform login logic here
+
+        navigate("/home");
       };
 
     return (
@@ -28,7 +33,7 @@ const LoginInput = () => {
                 </div>
                 
                 <div className="mt-12 bg-blue-600 shadow-xl hover:bg-blue-700 rounded-xl">
-                    <AuthButton label="Login" onClick={handleLogin} />
+                    <AuthButton label="Login" onClick={handleLogin}/>
                     {/* <button className="w-full py-5 text-white font-semibold">Login</button> */}
                 </div>
 
