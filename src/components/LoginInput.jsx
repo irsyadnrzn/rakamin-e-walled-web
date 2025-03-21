@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import AuthButton from "../hooks.jsx/AuthButton";
 import { useNavigate } from "react-router-dom";
+import AuthInput from "../hooks.jsx/AuthInput";
+import { useState } from "react";
 
 const LoginInput = () => {
     const navigate = useNavigate();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     const handleLogin = () => {
-        alert("Login Clicked");
+        alert(`Login Clicked - ${email} - ${password}`);
         // Perform login logic here
 
         navigate("/home");
@@ -20,7 +24,7 @@ const LoginInput = () => {
                 </div>
 
                 <div className="flex flex-col space-y-6">
-                    <input className = "w-full p-5 rounded-lg font-medium text-black focus:outline-none"
+                    {/* <input className = "w-full p-5 rounded-lg font-medium text-black focus:outline-none"
                         style={{ backgroundColor: "#FAFBFD" }} 
                         type="email" 
                         placeholder="Masukkan Email" 
@@ -29,7 +33,9 @@ const LoginInput = () => {
                         style={{ backgroundColor: "#FAFBFD" }} 
                         type="password" 
                         placeholder="Masukkan Password" 
-                    />
+                    /> */}
+                    <AuthInput type="email" placeholder="Masukkan Email" onChange = {(e) => setEmail(e.target.value)}/>
+                    <AuthInput type="password" placeholder="Masukkan Password" onChange = {(e) => setPassword(e.target.value)}/>
                 </div>
                 
                 <div className="mt-12 bg-blue-600 shadow-xl hover:bg-blue-700 rounded-xl">
