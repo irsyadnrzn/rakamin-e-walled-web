@@ -1,7 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-const AuthButton = ({label, onClick, to}) => {
+const AuthButton = ({label, onClick}) => {
     return(
         <div>
             <button
